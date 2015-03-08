@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="assets_backend" name="ui-translation assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/ui_translation/static/src/js/ui_translation.js"></script>
+            </xpath>
+        </template>
+    </data>
+</openerp>

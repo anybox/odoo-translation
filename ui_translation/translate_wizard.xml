@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="translate_form">
+            <field name="name">translate_form</field>
+            <field name="model">ui.translate.translate.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Translate">
+                    <group>
+                        <field name="name" readonly="1"/>
+                        <field name="label_model" readonly="1"/>
+                        <field name="user_lang" readonly="1"/>
+                        <field name="expected_translation_ids">
+                        </field>
+                    </group>
+                    <button name="translate" type="object"
+                                string="Translate" class="oe_highlight"/>
+                    <button special="cancel" string="Cancel"/>
+                </form>
+            </field>
+        </record>
+    </data>
+</openerp>
