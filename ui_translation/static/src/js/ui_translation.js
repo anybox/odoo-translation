@@ -16,7 +16,7 @@ openerp.ui_translation = function(instance){
             if(!event.ctrlKey){ return;}
             event.stopPropagation();
             event.preventDefault();
-            event.data.translate_terms(event.srcElement,
+            event.data.translate_terms(event.target,
                                        event.data.dataset.model)
         },
 
@@ -24,11 +24,10 @@ openerp.ui_translation = function(instance){
             if(!event.ctrlKey){ return;}
             event.stopPropagation();
             event.preventDefault();
-            event.data.translate_terms(event.srcElement)
+            event.data.translate_terms(event.target)
         },
 
         translate_terms: function(srcElement, current_model){
-            console.log(srcElement.textContent.trim());
             var self = this;
             this.session.rpc(
                 "/web/ui_translation/get_translate_wizard",
