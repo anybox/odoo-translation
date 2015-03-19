@@ -6,5 +6,10 @@
                 <script type="text/javascript" src="/ui_translation/static/src/js/ui_translation.js"></script>
             </xpath>
         </template>
+        <template id="qunit_suite" name="ui-translation qunit-assets" inherit_id="web.qunit_suite">
+            <xpath expr="//head" position="inside">
+                <script type="text/javascript" src="/ui_translation/static/tests/test_ui_translation.js"></script>
+            </xpath>
+        </template>
     </data>
 </openerp>

@@ -1,9 +1,30 @@
-openerp.ui_translation = function(instance){
-
+(function() {
+    var instance = openerp;
     var QWeb = instance.web.qweb,
     _t = instance.web._t;
 
-    instance.ui_translation = {};
+    openerp.ui_translation = {
+        true_value: true,
+
+        static_method: function(name){
+            //this methode is a bootstrap to js unitest
+            return 'Hello ' + name + '!';
+        },
+
+        SomeType: instance.web.Class.extend({
+            init: function (value) {
+                this.value = value;
+            },
+
+            display_value: function (){
+                return 'Value is ' + this.value;
+            },
+
+            say_hello: function(name){
+                return 'Hello ' + name + '!';
+            },
+        }),
+    };
 
     instance.web.ViewManager.include({
         start: function() {
@@ -29,7 +50,7 @@ openerp.ui_translation = function(instance){
 
         translate_terms: function(srcElement, current_model){
             var self = this;
-            this.session.rpc(
+            return this.session.rpc(
                 "/web/ui_translation/get_translate_wizard",
                 {label: srcElement.textContent.trim(),
                  model: current_model}
@@ -51,5 +72,10 @@ openerp.ui_translation = function(instance){
                 }
             );
         },
+
+        say_hello: function(name){
+            return 'Hello ' + name + '!';
+        },
+
     });
-};
+})();
